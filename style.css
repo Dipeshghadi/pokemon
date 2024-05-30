@@ -21,7 +21,7 @@ nav ul li a{
     text-transform: uppercase;
 }
 body{
-    background: url(../img/bg2.avif) no-repeat;
+    background: url(bg2.avif) no-repeat;
     height: 850px;
     padding: 0;
     background-size: cover;
