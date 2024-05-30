@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed-top shadow-lg">
+        <div class="container-fluid px-4">  
+          <a class="navbar-brand ms-3 ps-3 " href="#">
+            <img src="../img/pokemonlogo.png" alt="Avtar logo" style="width: 120px;" class="rounded-pill">
+           </a>
+           <h1 class="text-warning fw-italic">"Gotta Catch Em All!"</h1>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse me-4 pe-4" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active fw-bold" aria-current="page" href="https://www.google.com/search?q=pokemon&sca_esv=6dc0ae32fc817d32&sca_upv=1&biw=1366&bih=607&sxsrf=ADLYWILxrJ9VOj641Dswn_NJuevFqnpGTg%3A1716924764290&ei=XDFWZuObEduA1e8P_-KdwQU&ved=0ahUKEwjjubmVi7GGAxVbQPUHHX9xJ1gQ4dUDCBA&uact=5&oq=pokemon&gs_lp=Egxnd3Mtd2l6LXNlcnAiB3Bva2Vtb24yChAjGIAEGCcYigUyBBAjGCcyChAjGIAEGCcYigUyFBAuGIAEGJECGLEDGIMBGNQCGIoFMgsQABiABBiRAhiKBTIQEC4YgAQYsQMYQxiDARiKBTILEAAYgAQYkQIYigUyDhAAGIAEGJECGLEDGIoFMg0QLhiABBhDGNQCGIoFMhQQLhiABBiRAhixAxiDARjUAhiKBUjMSFCPEViXLXACeAGQAQCYAb4BoAHyCaoBAzAuOLgBA8gBAPgBAZgCDKACliqoAhTCAgcQIxgnGOoCwgIHEC4YJxjqAsICEBAuGMcBGCcY6gIYjgUYrwHCAhYQABgDGLQCGOUCGOoCGIwDGI8B2AEBwgIWEC4YAxi0AhjlAhjqAhiMAxiPAdgBAcICDhAuGIAEGJECGNQCGIoFwgIKEC4YgAQYQxiKBcICChAAGIAEGEMYigXCAgsQABiABBixAxiDAcICDRAAGIAEGLEDGEMYigXCAgcQLhiABBgKwgIFEAAYgATCAhkQLhiABBhDGIoFGJcFGNwEGN4EGOAE2AECwgIjEC4YgAQYkQIYsQMYgwEY1AIYigUYlwUY3AQY3gQY4ATYAQKYAxS6BgYIARABGAu6BgYIAhABGBSSBwsyLjYuMi43LTEuMaAHvooB&sclient=gws-wiz-serp">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="https://www.google.com/search?q=pokemon+seasons&sca_esv=6dc0ae32fc817d32&sca_upv=1&biw=1366&bih=607&sxsrf=ADLYWIL1nolmPPJIH8HIz0jL7H-GOgH1DA%3A1716924934377&ei=BjJWZrTVFvDZ1e8PoNiEgAo&oq=pokemon+seasons&gs_lp=Egxnd3Mtd2l6LXNlcnAiD3Bva2Vtb24gc2Vhc29ucyoCCAAyDhAAGIAEGJECGLEDGIoFMgsQABiABBiRAhiKBTILEAAYgAQYkQIYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgcQABiABBgKMgUQABiABDIFEAAYgARIvSVQ2gpY4xpwAXgBkAEAmAHDAaABygmqAQMwLji4AQHIAQD4AQGYAgmgApwLwgIHECMYsAMYJ8ICChAAGLADGNYEGEfCAg0QABiABBiwAxhDGIoFwgITEC4YgAQYsAMYQxjIAxiKBdgBAcICFhAuGIAEGLADGEMY1AIYyAMYigXYAQHCAgoQIxiABBgnGIoFwgIEECMYJ8ICDRAAGIAEGLEDGEMYigXCAhAQLhiABBixAxhDGIMBGIoFwgIKEAAYgAQYQxiKBcICEBAAGIAEGLEDGEMYgwEYigXCAgsQABiABBixAxiDAcICCxAuGIAEGLEDGNQCwgIOEC4YgAQYsQMYgwEY1ALCAgsQLhiABBixAxiDAcICLhAuGIAEGLEDGEMYgwEYigUYlwUY3AQY3gQY4AQY9AMY8QMY9QMY9gMY9wPYAQLCAggQABiABBixA8ICKRAuGIAEGLEDGIMBGJcFGNwEGN4EGOAEGPQDGPEDGPUDGPYDGPcD2AECwgIFEC4YgASYAwCIBgGQBhS6BgYIARABGAi6BgYIAhABGBSSBwUxLjUuM6AHw2A&sclient=gws-wiz-serp">Seasons</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="https://www.google.com/search?q=pokemon+episode+list&sca_esv=6dc0ae32fc817d32&sca_upv=1&biw=1366&bih=607&sxsrf=ADLYWIJHmDRem_RE6soHEI7hV6ztl3914Q%3A1716924985548&ei=OTJWZqOQIY7U1e8PibGTgAQ&oq=pokemon+epi&gs_lp=Egxnd3Mtd2l6LXNlcnAiC3Bva2Vtb24gZXBpKgIIATIREAAYgAQYkQIYsQMYgwEYigUyERAAGIAEGJECGLEDGIMBGIoFMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARInClQqwdYzRxwAXgBkAEAmAG5AaABrQuqAQQwLjEwuAEByAEA-AEBmAIJoAKVCsICChAAGLADGNYEGEfCAg0QABiABBiwAxhDGIoFwgIOEAAYsAMY5AIY1gTYAQHCAhMQLhiABBiwAxhDGMgDGIoF2AECwgIWEC4YgAQYsAMYQxjUAhjIAxiKBdgBAsICDRAAGIAEGLEDGEMYigXCAggQABiABBixA8ICCxAAGIAEGLEDGIMBwgIQEAAYgAQYsQMYQxiDARiKBcICBRAuGIAEwgIKEAAYgAQYQxiKBcICChAjGIAEGCcYigXCAgsQLhiABBixAxiDAcICBBAjGCfCAgsQABiABBiRAhiKBZgDAIgGAZAGEroGBggBEAEYCboGBggCEAEYCJIHBTEuNy4xoAe6UQ&sclient=gws-wiz-serp">Episodes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="https://pokemon.fandom.com/wiki/Category:Main_characters">Characters</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="https://s.wsj.net/public/resources/images/BN-PX611_pokemo_P_20160921003919.jpg">Creator</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="https://www.pokemon.com/us/pokemon-video-games">Games</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+
+      <section class="home">
+        <div class="container-fluid pt-md-0 pt-0 ">
+          <div class="row text-center text-md-start pt-md-0 pt-5 justify-content-center align-items-center" style="height: 850px;">
+          <div class="col-md-5  py-5 ">
+            <h1 class="display-1 text-capitalize text-warning fw-bolder ">
+              <span class="border border-light border-3 bg-danger text-light">POKEMON</span> 
+            </h1>
+            <p class="lead fw-italic text-danger">
+              <span class="border border-light border-2 bg-dark text-light"> " Come out, my friend!", ... I choose you!</span>
+            </p>
+          </div>
+          <div class="col-md-4">
+            
+            <img src="../img/ashpikachu.gif" class="img-fluid" alt="" style="height: 280px; width: 360px;">
+            
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="subscribe p-5 text-center bg-dark shadow-lg">
+        <div class="container pt-md-0 pt-3 ">
+          <h2 class="text-light pb-4 fw-bold">To Watch POKEMON Movies</h2>
+          <form class="row">
+      <div class="col-md mb-3">
+        <input type="text" class="form-control fw-bold" placeholder="Your Name*" required>
+      </div>
+      <div class="col-md mb-3">
+        <input type="email" class="form-control fw-bold" placeholder="Your Email*" required>
+      </div>
+      <div class="col-md mb-3">
+        <input type="text" class="form-control fw-bold" placeholder="Phone no*" required>
+      </div>
+      <div class="col-md">
+        <button type="submit" class=" btn btn-danger w-100 text-center text-white fw-bolder">
+          SUBMIT
+        </button>
+      </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="why text-center my-0 py-0 pt-0 bg-light shadow-lg">
+        <div class="container-fluid bg-primary ">
+          <h1 class="text-light pt-4 fw-bold">
+            LOVELY CHARACTERS
+          </h1>
+          <div class="row justify-content-center">
+      <div class="col-lg-5 pb-4 pt-3">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button text-danger fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Ash Ketchum
+              </button>
+            </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Ash Ketchum, known as Satoshi (サトシ) in Japan</strong> Ash was designed by Atsuko Nishida,[5] and named after creator Satoshi Tajiri.[6] The character was designed to represent how Tajiri was as a child, obsessed with catching bugs.[7] During localization of both for North American audiences, the character's name was changed in the anime to "Ash Ketchum"
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed text-warning fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Pikachu
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Pikachu[a] is a fictional species of the Pokémon media franchise. Designed by Atsuko Nishida and Ken Sugimori.</strong> Pikachu is a fictional species of Pokémon created for the Pokémon franchise. Developed by Game Freak and published by Nintendo, the series began in Japan in 1996 with the release of the video games
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed text-success fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Team ROCKET
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Team Rocket is primarily represented through the trio of characters Jessie, James, and Meowth</strong> Jessie and James originally had an Arbok and a Weezing as their signature Pokémon, respectively, and the trio were later joined by a Wobbuffet as one of their only major recurring Pokémon as the series progressed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+      </section>
+<section class="famous pokemons">
+        <div class="container-fluid text-center bg-secondary my-0 py-0 pt-0 pb-3 ">
+          <h1 class="text-light pt-4 fw-bolder">
+            Famous Pokemons
+          </h1>
+          <p class="lead text-light fw-bold">
+            Some Famous Pokemons From All Seasons
+          </p>
+
+          <div class="row ">
+            <div class="col-sm-3 p-2 d-flex justify-content-center">
+                <div class="card-text-center bg-warning pb-2 pt-3" style="width:250px; height:100%; ">
+                    <img src="../img/pikachu1.jpg" class="card-img-top" alt="" height="200px" width="50px">
+                <div class="card-body  text-center">
+                    <div class="card-title text-light  text-center fw-bolder">PIKACHU</div>
+                    <p class="card-text">Pikachu is a fictional species of the Pokémon media franchise. Designed by Atsuko Nishida and Ken Sugimori. Pikachu is a fictional species of Pokémon created for the Pokémon franchise. Developed by Game Freak and published by Nintendo, the series began in Japan in 1996 with the release of the video games  </p>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mymodal">
+                        PIKACHU
+                      </button>
+                    <div class="modal" id="mymodal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-warning">PIKACHU</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    
+                                </div>
+                                <div class="modal-body">
+                                    <img src="../img/PIKAGIF.gif" alt="" height="500px" width="450px">
+                                    <p>Pikachu[a] is a fictional species of the Pokémon media franchise. Designed by Atsuko Nishida and Ken Sugimori. Pikachu is a fictional species of Pokémon created for the Pokémon</p>
+      
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">CLOSE</button>
+                                  </div>
+                            
+                            </div>
+                        </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-3 p-2 d-flex justify-content-center">
+                <div class="card-text-center bg-warning pb-2 pt-3" style="width:250px; height:100%;">
+                    <img src="../img/chari.jpg" class="card-img-top" alt="" height="200px" width="50px">
+                <div class="card-body text-center">
+                    <div class="card-title text-light  text-center fw-bolder">CHARIZARD</div>
+                    <p class="card-text">Charizard was designed by Atsuko Nishida for the first generation of Pocket Monsters games Red and Green, which were localized outside Japan as Pokémon Red and Blue.[1] Charizard was designed before Charmander, with Charmander being based on Charizard's design. carizard was evolved from charmender.</p>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mymodal1">
+                        CHARIZARD
+                      </button>
+                    <div class="modal" id="mymodal1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-danger">CHARIZARD</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    
+                                </div>
+                                <div class="modal-body">
+                                    <img src="../img/CHARI.gif" alt="" height="500px" width="450px">
+                                    <p>Charizard was designed by Atsuko Nishida for the first generation of Pocket Monsters games Red and Green, which were localized outside Japan as Pokémon Red and Blue.</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">CLOSE</button>
+                                  </div>
+                            
+                            </div>
+                        </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-3 p-2 d-flex justify-content-center">
+                <div class="card-text-center bg-warning pb-2 pt-3" style="width: 250px;  height:100%;">
+                    <img src="../img/NINJAGREY.jpg" class="card-img-top" alt="" height="200px" width="50px">
+                <div class="card-body text-center">
+                    <div class="card-title text-light fw-bolder text-center">GREY NINJA</div>
+                    <p class="card-text">It appears and vanishes with a ninja's grace. It toys with its enemies using swift movements, while slicing them with throwing stars of sharpest water. It creates throwing stars out of compressed water. When it spins them and throws them at high speed grey ninja is pokemon of ash ketchum. grey ninja is very strong.</p>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mymodal2">
+                      GREY NINJA
+                    </button>
+                    <div class="modal" id="mymodal2">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h4 class="modal-title text-primary">GREY NINJA</h4>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  
+                              </div>
+                              <div class="modal-body">
+                                  <img src="../img/NINJAGREY1.webp" alt="" height="500px" width="450px">
+                                  <p>Greninja (Japanese: ゲッコウガ Gekkouga) is a dual-type Water/Dark Pokémon introduced in Generation VI. It evolves from Frogadier starting at level 36. It is the final form of Froakie.</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">CLOSE</button>
+                                </div>
+                          
+                          </div>
+                      </div>
+              </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-3 p-2 d-flex justify-content-center">
+                <div class="card-text-center bg-warning pb-2 pt-3" style="width: 250px;  height:100%;">
+                    <img src="../img/PSYDUCK.jpg" class="card-img-top" alt="" height="200px" width="50px">
+                <div class="card-body text-center">
+                    <div class="card-title text-light  text-center ">PSYDUCK</div>
+                    <p class="card-text">A duck-like Pokémon, Psyduck is constantly stunned by its headache, and usually just stands vacantly, trying to calm itself. In the anime series, Psyduck's appearances became a running gag; Misty, a major supporting character, would often release Psyduck by accident instead of the Pokémon she wanted to use. </p>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mymodal3">
+                          PSYDUCK
+                        </button>
+                    <div class="modal" id="mymodal3">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h4 class="modal-title text-danger">PSYDUCK</h4>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  
+                              </div>
+                              <div class="modal-body">
+                                  <img src="../img/PSY1.gif" alt="" height="500px" width="450px">
+                                  <p> Psyduck known as Koduck (コダック, Kodakku) in Japan, is a Pokémon species in Nintendo and Game Freak's Pokémon franchise.</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">CLOSE</button>
+                                </div>
+                          
+                          </div>
+                      </div>
+              </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </section>
+ <section class="contact bg-dark mt-0 py-0 my-0 pb-3 shadow-lg">
+        <div class="container">
+          <form class="row justify-content-center align-items-center needs-validation" novalidate>
+      <div class="col-md-7 pt-5">
+        <h2 class="text-light fw-bold">For More Movies And Episodes</h2>
+        <p class="text-light">
+          To watch more episodes and movies, fill the following details!
+        </p>
+        <div class="input-group my-4">
+          <span class="input-group-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      </svg>
+          </span>
+          <input type="text" class="form-control" placeholder="Username" required>
+        </div>
+      
+      
+      
+      
+        <div class="input-group my-4">
+          <span class="input-group-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+              <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+      </svg>
+          </span>
+          <input type="email" class="form-control" placeholder="Email" required>
+        </div>
+      
+      
+      
+      
+      
+        <div class="input-group my-4">
+          <span class="input-group-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+              <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+            </svg>
+          </span>
+        <textarea  rows="10" class="form-control" placeholder="Message" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <img src="3f3dd9219f7bb1c9617cf4f154b70383.jpg" class="img-fluid rounded-circle" alt="">
+      </div>
+      <div class="col-10">
+        <button type="submit" class="btn btn-primary w-100 fw-bold ">
+          Proceed
+        </button>
+      </div>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer py-4 bg-danger text-white shadow-lg">
+        <p class="lead text-center fw-bold">
+         Copyright &copy; May 2024
+        </p>
+      </footer>
+      
+</body>
+</html>
